@@ -7,7 +7,7 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions(
         plugin = {"pretty", "html:target/report.html"},
         features = "src/test/java/ui/features",
-        glue = {"stepdefs", "commonMethods"}
+        glue = {"/ui/stepdefs", "/ui/commonMethods"}
 )
 public class TestNGRunner extends AbstractTestNGCucumberTests {
 

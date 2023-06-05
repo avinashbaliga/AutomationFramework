@@ -11,6 +11,9 @@ import org.openqa.selenium.edge.EdgeDriver;
 import utilities.ProjectProperties;
 import utilities.exceptions.PropertyNotFound;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
 public class DriverFactory {
 
     private static ThreadLocal<WebDriver> driverStore = new ThreadLocal<>();
