@@ -2,9 +2,12 @@ package ui.stepdefs;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import ui.commonMethods.CommonMethods;
 import ui.objects.HerokuappPrimaryObject;
+
+import java.util.List;
 
 public class HerokuappPrimaryStepdef {
 
@@ -32,5 +35,22 @@ public class HerokuappPrimaryStepdef {
     public void thePageSubheadingIs(String subHeading){
         CommonMethods.putStepNameToScenarioContext("The page sub heading is "+subHeading);
         herokuappPrimaryObject.validateSubHeading(subHeading);
+    }
+
+    @Then("I should be able to check the checkboxes")
+    public void iShouldBeAbleToCheckTheCheckboxes(){
+        CommonMethods.putStepNameToScenarioContext("I should be able to check the checkboxes");
+        herokuappPrimaryObject.iShouldBeAbleToCheckTheCheckboxes();
+    }
+
+    @Then("The dropdown should contain below options")
+    public void theDropdownShouldContainBelowOptions(List<String> options){
+        CommonMethods.putStepNameToScenarioContext("The dropdown should contain below options "+options.toString());
+        herokuappPrimaryObject.theDropdownShouldContainBelowOptions(options);
+    }
+
+    @And("I should be able to select the available options")
+    public void iShouldBeAbleToSelectTheOptions(List<String> options){
+        herokuappPrimaryObject.iShouldBeAbleToSelectTheOptions(options);
     }
 }
